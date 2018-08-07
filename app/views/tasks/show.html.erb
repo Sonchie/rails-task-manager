@@ -1,0 +1,21 @@
+<h1>Task Detail</h1>
+<h2><%= @task.title %></h2>
+<p>Task details:<%= @task.details %></p>
+
+<div class="completion">
+  <% if @task.completed %>
+  <i class="fas fa-check">Done</i>
+  <% else %>
+  <i class="far fa-square">Not Done</i>
+  <% end %>
+</div>
+
+<div class="update">
+<%= link_to "Edit Task", task_edit_path(@task) %>
+</div>
+
+<div class="delete">
+  <%= link_to "Delete Task", task_path(@task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+</div>
